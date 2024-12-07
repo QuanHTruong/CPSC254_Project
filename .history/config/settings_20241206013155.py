@@ -61,14 +61,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        'PASSWORD': config('DATABASE_PASS'),
-        'HOST': config('DATABASE_HOST'),
-        'PORT': config('DATABASE_PORT')  # leave blank so the default port is selected
+        'NAME': 'food',
+        'USER': 'postgres',
+        'PASSWORD': 'yourpassword',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
-# print(config('DATABASE_PORT'))  # Should print 'food' if .env is loaded correctly
+
 
 AUTH_USER_MODEL = 'foodtracker.User'
 

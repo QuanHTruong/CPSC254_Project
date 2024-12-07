@@ -68,7 +68,7 @@ DATABASES = {
         'PORT': config('DATABASE_PORT')  # leave blank so the default port is selected
     }
 }
-# print(config('DATABASE_PORT'))  # Should print 'food' if .env is loaded correctly
+
 
 AUTH_USER_MODEL = 'foodtracker.User'
 

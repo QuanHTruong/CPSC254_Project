@@ -106,21 +106,21 @@
                 </div>
             </div>
         </nav>
-        {% if user.is_authenticated %}  
-        <div class="container my-3">
-            <div class="row">
-                <div class="col text-end">
-                    <a class="btn btn-danger btn-lg shadow-sm" href="{% url 'food_add' %}" role="button">
-                        <i class="far fa-plus-square me-2"></i> Add Food Item
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% endif %}
 
         <main>
             <div class='container'>
                 {% block body %}
+                {% if user.is_authenticated %}  
+                <div class="container my-3">
+                    <div class="row">
+                        <div class="col text-end">
+                            <a class="btn btn-danger btn-lg shadow-sm" href="{% url 'food_add' %}" role="button">
+                                <i class="far fa-plus-square me-2"></i> Add Food Item
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
                 {% endblock %}
             </div>
         </main>

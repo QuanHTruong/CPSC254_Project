@@ -29,7 +29,7 @@
         <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
             <div class='container-fluid'>
                 <a class='navbar-brand' href="{% url 'index' %}">
-                    Food Tracker
+                    <i class='fas fa-pepper-hot fa-2xl'></i> Food Tracker
                 </a>
                 <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor' aria-controls='navbarColor' aria-expanded='false' aria-label='Toggle navigation'>
                     <span class='navbar-toggler-icon'></span>
@@ -59,7 +59,13 @@
                             </div>
                         </li>
                         
-                        {% if user.is_authenticated %}                
+                        {% if user.is_authenticated %}
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-danger btn-lg" href="{% url 'food_add' %}" role="button">
+                                    <i class="far fa-plus-square"></i> Add Food Item
+                                </a>
+                                </div>
+                        
                             <li class='nav-item'>
                                 <a class='nav-link' href="{% url 'food_log' %}">
                                     <i class='fas fa-utensils'></i> Food Log
@@ -106,17 +112,6 @@
                 </div>
             </div>
         </nav>
-        {% if user.is_authenticated %}  
-        <div class="container my-3">
-            <div class="row">
-                <div class="col text-end">
-                    <a class="btn btn-danger btn-lg shadow-sm" href="{% url 'food_add' %}" role="button">
-                        <i class="far fa-plus-square me-2"></i> Add Food Item
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% endif %}
 
         <main>
             <div class='container'>
@@ -126,8 +121,8 @@
         </main>
 
         <footer class='py-4'>
-            <!-- <div class='d-flex align-items-center justify-content-center'>
-            </div> -->
+            <div class='d-flex align-items-center justify-content-center'>
+            </div>
         </footer>
 
         {% block script %}
