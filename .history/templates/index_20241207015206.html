@@ -40,17 +40,17 @@
                             </div>
                         </p>
                         <p class='card-text'>
-                            {% if food.days_until_expiration is not None %}
+                            {% if item.progress is not None %}
                                 <div class="my-3">
                                     <div class="progress">
                                         <div
                                             class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
                                             role="progressbar"
-                                            style="width: {{ food.progress }}%"
-                                            aria-valuenow="{{ food.days_until_expiration }}"
+                                            style="width: {{ item.progress }}%"
+                                            aria-valuenow="{{ item.days_until_expiration }}"
                                             aria-valuemin="0"
                                             aria-valuemax="30">
-                                            {{ food.days_until_expiration }} days left
+                                            {{ item.days_until_expiration }} days left
                                         </div>
                                     </div>
                                 </div>

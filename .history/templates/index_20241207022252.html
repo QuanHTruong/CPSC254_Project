@@ -46,10 +46,10 @@
                                         <div
                                             class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
                                             role="progressbar"
-                                            style="width: {{ food.progress }}%"
+                                            style="width: {{ food.days_until_expiration }}%"
                                             aria-valuenow="{{ food.days_until_expiration }}"
                                             aria-valuemin="0"
-                                            aria-valuemax="30">
+                                            aria-valuemax="100">
                                             {{ food.days_until_expiration }} days left
                                         </div>
                                     </div>

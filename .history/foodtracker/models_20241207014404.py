@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from datetime import date
+
 
 class User(AbstractUser):
     def __str__(self):
@@ -35,7 +35,7 @@ class Food(models.Model):
 
     def __str__(self):
         return f'{self.food_name} - category: {self.category}'
-    @property
+      @property
     def days_until_expiration(self):
         if self.expiration_date:
             delta = (self.expiration_date - date.today()).days
