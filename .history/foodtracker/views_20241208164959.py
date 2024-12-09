@@ -111,8 +111,9 @@ def food_list_view(request):
         'categories': FoodCategory.objects.all(),
         'foods': foods,
         'pages': pages,
-        'progress' :progress,
+        'expiration_date': food.expiration_date,
         'days_until_expiration': days_until_expiration,
+        'progress': progress,
         'title': 'Food List'
     })
 

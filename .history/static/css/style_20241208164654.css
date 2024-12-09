@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Take up remaining space */
+}
+
+footer {
+    height: 90px;
+    background-color: #333; /* Optional, for visibility */
+    width: 100%;
+    text-align: center;
+    color: white;
+    line-height: 90px; /* Center text vertically */
+}

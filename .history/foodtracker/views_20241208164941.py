@@ -97,6 +97,8 @@ def food_list_view(request):
             # Ensure progress is between 0% and 100%
             # given the time food stay in is roughly 2 weeks
             progress = max(0, min(100, (days_until_expiration) / 14 * 100))
+    
+     print(progress)
     # Show 4 food items per page
     page = request.GET.get('page', 1)
     paginator = Paginator(foods, 4)
@@ -111,8 +113,9 @@ def food_list_view(request):
         'categories': FoodCategory.objects.all(),
         'foods': foods,
         'pages': pages,
-        'progress' :progress,
+        'expiration_date': food.expiration_date,
         'days_until_expiration': days_until_expiration,
+        'progress': progress,
         'title': 'Food List'
     })
 

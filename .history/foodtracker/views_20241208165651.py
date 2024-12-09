@@ -86,17 +86,17 @@ def food_list_view(request):
 
     # Calculate expiration details for each food item
     for food in foods:
-        days_until_expiration = None
-        progress = None
+        food.days_until_expiration = None
+        food.progress = None
         food.image = food.get_images.first()
         if food.expiration_date:
             # Calculate days until expiration
             today = date.today()
-            days_until_expiration = (food.expiration_date - today).days
+            food.days_until_expiration = (food.expiration_date - today).days
 
             # Ensure progress is between 0% and 100%
             # given the time food stay in is roughly 2 weeks
-            progress = max(0, min(100, (days_until_expiration) / 14 * 100))
+            food.progress = max(0, min(100, (food.days_until_expiration) / 50 * 100))
     # Show 4 food items per page
     page = request.GET.get('page', 1)
     paginator = Paginator(foods, 4)
@@ -111,8 +111,6 @@ def food_list_view(request):
         'categories': FoodCategory.objects.all(),
         'foods': foods,
         'pages': pages,
-        'progress' :progress,
-        'days_until_expiration': days_until_expiration,
         'title': 'Food List'
     })
 
