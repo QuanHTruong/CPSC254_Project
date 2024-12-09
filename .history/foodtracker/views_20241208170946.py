@@ -141,9 +141,6 @@ def delete_food(request, food_id):
     """
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
-    food = Food.objects.filter(id=food_id)
-    food.delete()
-    return redirect('index')
     
 
 @login_required
